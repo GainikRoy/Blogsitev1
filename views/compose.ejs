@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+    <h1>Compose</h1>
+    <form action="/compose" method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" name="titleBx" placeholder="title here">
+        </div>
+        <div class="form-group">
+            <label for="content">Content</label>
+            <textarea class="form-control text" id="content" name="contentBx" rows="3" placeholder="content here"
+                autocomplete="off"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">submit</button>
+        <br>
+        <% for(let i=0; i < list.length; i++){ %>
+            <p>
+                <%=list[i]%>
+            </p>
+            <%}%>
+    </form>
+    <%- include('partials/footer') %>
