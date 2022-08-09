@@ -3,4 +3,12 @@
     <p>
         <%=para%>
     </p>
-    <%- include('partials/footer') -%>
+    <%list.forEach((ele)=>{%>
+        <h2>
+            <%=ele.title%>
+        </h2>
+        <p>
+            <%=ele.content%>
+        </p>
+        <%});%>
+            <%- include('partials/footer') -%>

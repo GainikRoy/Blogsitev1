@@ -7,15 +7,18 @@
         </div>
         <div class="form-group">
             <label for="content">Content</label>
-            <textarea class="form-control text" id="content" name="contentBx" rows="3" placeholder="content here"
+            <textarea class="form-control" id="content" name="contentBx" rows="3" cols="30" placeholder="content here"
                 autocomplete="off"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">submit</button>
         <br>
-        <% for(let i=0; i < list.length; i++){ %>
-            <p>
-                <%=list[i]%>
-            </p>
-            <%}%>
     </form>
-    <%- include('partials/footer') %>
+    <%list.forEach((ele)=>{%>
+        <h2>
+            <%=ele.title%>
+        </h2>
+        <p>
+            <%=ele.content%>
+        </p>
+        <%});%>
+            <%- include('partials/footer') %>

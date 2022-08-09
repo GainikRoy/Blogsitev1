@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req,res)=>{
-  res.render('home', {para: homeStartingContent});
+  res.render('home', {para: homeStartingContent, list: list});
 });
 
 app.get("/about", (req, res)=>{
@@ -32,8 +32,9 @@ app.get("/compose", (req, res)=>{
 });
 
 app.post("/compose", (req, res)=>{
-  const temp = req.body.inputBx;
-  if(temp != "") list.push(temp);
+  const post = {title: req.body.titleBx, content: req.body.contentBx};
+  if(post.title !="" && post.content != "") list.push(post);
+  else res.send("<script>alert('enter both title and content'); window.location.href = '/compose'; </script>");
   res.redirect("/compose");
 });
 
