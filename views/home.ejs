@@ -8,7 +8,8 @@
             <%=ele.title%>
         </h2>
         <p>
-            <%=ele.content%>
+            <%=ele.content.substring(0, 20)+'....'%>
+            <a href="/post/<%=ele.title%>">more</a>
         </p>
         <%});%>
             <%- include('partials/footer') -%>
