@@ -1,3 +1,2 @@
-# Blogsitev1
-<h1> A blog <h1>
-<p> its just a blog </p>
+# Blogsite
+<h1> A blog site in progress <h1>
